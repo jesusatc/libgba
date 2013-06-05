@@ -80,6 +80,10 @@ inline void gba_draw_set_font(font_struct font)
  */
 void gba_draw_pixel(u_short x, u_short y)
 {
+  // TODO
+  // This function should check that the arguments are correct
+  // x should be lesser than SCREEN_WIDTH
+  // x should be lesser than SCREEN_HEIGHT
   u_short pixel;
   gba_word16 video_buffer = gba_vram.video_buffer;
   short bg_mode = gba_bg_get_mode();
@@ -124,6 +128,9 @@ void gba_draw_pixel(u_short x, u_short y)
  */
 void gba_draw_line(u_short x1, u_short y1, u_short x2, u_short y2)
 {
+  // TODO
+  // This function should correctly handle both negative values and
+  // greater than SCREEN_WIDTH and SCREEN_HEIGHT values
   short i, deltax, deltay, numpixels;
   short d, dinc1, dinc2;
   short x, xinc1, xinc2;
@@ -202,6 +209,13 @@ void gba_draw_line(u_short x1, u_short y1, u_short x2, u_short y2)
  */
 void gba_draw_circle(u_short xCenter, u_short yCenter, u_short radius)
 {
+  // TODO
+  // This function should correctly handle both negative values and
+  // greater than SCREEN_WIDTH and SCREEN_HEIGHT values
+
+  // TODO
+  // A function that drew a filled circle would be interesting.
+  short i, deltax, deltay, numpixels;
   short x = 0;
   short y = radius;
   short p = 3 - 2 * radius;
@@ -233,6 +247,13 @@ void gba_draw_circle(u_short xCenter, u_short yCenter, u_short radius)
  */
 void gba_draw_box(u_short left, u_short top, u_short right, u_short bottom)
 {
+  // TODO
+  // This function should correctly handle both negative values and
+  // greater than SCREEN_WIDTH and SCREEN_HEIGHT values
+
+  // TODO
+  // A function that drew an empty box would be interesting.
+  short i, deltax, deltay, numpixels;
   u_short x, y;
 
   for(y = top; y < bottom; y++)
@@ -252,6 +273,10 @@ void gba_draw_box(u_short left, u_short top, u_short right, u_short bottom)
  */
 void gba_draw_char(u_char the_char)
 {
+  // TODO
+  // This function should correctly handle both negative values and
+  // greater than SCREEN_WIDTH and SCREEN_HEIGHT values
+  short i, deltax, deltay, numpixels;
   u_short i, j;          /* Para recorrer el bitmap del carácter */
   u_char pintar;         /* Si es TRUE hay que pintar el píxel del carácter */
   u_short bitmaps_width; /* Ancho total de los bitmaps en píxeles */
