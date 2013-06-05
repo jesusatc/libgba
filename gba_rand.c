@@ -132,6 +132,10 @@ u_int gba_rand()
  */
 u_int gba_rand_mod(u_int max)
 {
+  // If max is 0, do not hang the console
+  if (max==0)
+    return max;
+
   signed int n = gba_rand();
 
   if (n<=0 || n>= max)
